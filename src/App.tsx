@@ -14,6 +14,7 @@ import GradientText from "./components/GradientText";
 import FeaturedSection from "./components/FeaturedSection";
 import SkillCard from "./components/skills/LanguagesCard";
 import SkillsCard from "./components/skills/SkillsCard";
+import { ProjectsCard } from "./components/projects/ProjectsCard";
 
 import {
   IconAdjustmentsBolt,
@@ -301,15 +302,18 @@ function App() {
               </div>
             </div>
 
-            {/* 3D-ASCII */}
+            {/* skills section */}
             <div
               style={{
                 display: "flex",
+                flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
-                marginBottom: "5rem",
+                gap: "2rem",
+                marginBottom: "15rem",
               }}
             >
+              {/* 3D-ASCII */}
               <GradientText colors={primaryGradientColors} animationSpeed={3}>
                 <pre
                   style={{
@@ -331,9 +335,42 @@ function App() {
   `}
                 </pre>
               </GradientText>
+              <SkillsCard />
             </div>
 
-            <SkillsCard />
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexDirection: "column",
+                gap: "2rem",
+                marginBottom: "15rem",
+              }}
+            >
+              <GradientText colors={primaryGradientColors} animationSpeed={3}>
+                <pre
+                  style={{
+                    fontFamily: "monospace",
+                    fontSize: "1rem",
+                    lineHeight: "1",
+                    fontWeight: "900",
+                  }}
+                >
+                  {`________  ________  ________        ___  _______   ________ _________  ________
+|\\   __  \\|\\   __  \\|\\   __  \\      |\\  \\|\\  ___ \\ |\\   ____|\\___   ___|\\   ____\\
+\\ \\  \\|\\  \\ \\  \\|\\  \\ \\  \\|\\  \\     \\ \\  \\ \\   __/|\\ \\  \\___\\|___ \\  \\_\\ \\  \\___|_
+ \\ \\   ____\\ \\   _  _\\ \\  \\\\\\  \\  __ \\ \\  \\ \\  \\_|/_\\ \\  \\       \\ \\  \\ \\ \\_____  \\
+  \\ \\  \\___|\\ \\  \\\\  \\\\ \\  \\\\\\  \\|\\  \\\\_\\  \\ \\  \\_|\\ \\ \\  \\____   \\ \\  \\ \\|____|\\  \\
+   \\ \\__\\    \\ \\__\\\\ _\\\\ \\_______\\ \\________\\ \\_______\\ \\_______\\  \\ \\__\\  ____\\_\\  \\
+    \\|__|     \\|__|\\|__|\\|_______|\\|________|\\|_______|\\|_______|   \\|__| |\\_________\\
+                                                                          \\|_________|`}
+                </pre>
+              </GradientText>
+
+              {/*  Here will be the projects card */}
+              <ProjectsCard />
+            </div>
 
             {/* C++ Code Card */}
             {/* <CodeCard
@@ -358,27 +395,6 @@ int main() {
             /> */}
 
             {/* Card Swap Component */}
-            {/* <div style={{ height: "600px", position: "relative" }}>
-              <CardSwap
-                cardDistance={60}
-                verticalDistance={70}
-                delay={5000}
-                pauseOnHover={false}
-              >
-                <Card>
-                  <h3 style={{ color: "white" }}>Card 1</h3>
-                  <p>Your content here</p>
-                </Card>
-                <Card>
-                  <h3>Card 2</h3>
-                  <p>Your content here</p>
-                </Card>
-                <Card>
-                  <h3>Card 3</h3>
-                  <p>Your content here</p>
-                </Card>
-              </CardSwap>
-            </div> */}
           </AnimatedContent>
         </div>
       </div>
