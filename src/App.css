@@ -1,0 +1,76 @@
+/* color palette - to change if i want */
+:root {
+  --color-background: #212529;
+  --color-surface-primary: #1f2226;
+  --color-surface-secondary: #343a40;
+  --color-surface-borders: #495057;
+  --color-text-primary: #6096ba;
+  --color-text-secondary: #ced4da;
+  --color-spotlight-color: #6c757d;
+  --color-concept-card: #2d3338;
+  --color-gradient-primary: #a9cde3, #81b3cf, #6096ba, #427a9d, #2c5f7f, #1b455e;
+  --color-gradient-secondary: #f0f0f0, #cfcfcf, #aeaeae, #8c8c8c, #6b6b6b,
+    #4a4a4a;
+}
+
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-background);
+}
+
+/* Custom scrollbar styles */
+.terminal-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-text-primary);
+  border-radius: 4px;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #7ba7c7;
+}
+
+/* Firefox scrollbar */
+.terminal-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-text-primary) rgba(0, 0, 0, 0.2);
+}
+
+/* Feature section hover effects */
+.group\/feature:hover .feature-icon {
+  color: var(--color-text-primary) !important;
+}
+
+.group\/feature:hover .feature-bar {
+  background-color: var(--color-text-primary) !important;
+}
