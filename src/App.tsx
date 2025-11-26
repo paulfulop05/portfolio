@@ -117,7 +117,7 @@ function App() {
             justifyContent: "center",
             minHeight: "100vh",
             padding: "2rem",
-            pointerEvents: "none",
+            pointerEvents: "auto",
           }}
         >
           <AnimatedContent

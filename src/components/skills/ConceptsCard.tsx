@@ -12,9 +12,9 @@ function ConceptsCard() {
       className={`relative rounded-lg`}
       style={{
         width: "500px",
-        height: "210px",
+        height: "225px",
         backgroundColor: "rgba(52, 58, 64, 0.7)", // var(--color-surface-secondary) with 70% opacity
-        border: "2px solid var(--color-surface-borders)",
+        border: "1px solid var(--color-surface-borders)",
         pointerEvents: "auto",
         backdropFilter: "blur(3px)",
         margin: "1rem",
@@ -50,10 +50,10 @@ function ConceptsCard() {
           margin: "1rem",
           fontFamily: "'Montserrat', sans-serif",
           color: "var(--color-text-secondary)",
-          lineHeight: "1",
           flexShrink: 0,
-          fontSize: "0.9rem",
-          fontWeight: "450",
+          fontSize: "0.875rem",
+          fontWeight: "400",
+          lineHeight: "1.5",
         }}
       >
         Core principles and techniques that guide writing efficient, organized,

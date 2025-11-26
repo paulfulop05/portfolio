@@ -14,7 +14,7 @@ function LanguagesCard() {
         width: "500px",
         height: "390px",
         backgroundColor: "rgba(52, 58, 64, 0.7)", // var(--color-surface-secondary) with 70% opacity
-        border: "2px solid var(--color-surface-borders)",
+        border: "1px solid var(--color-surface-borders)",
         pointerEvents: "auto",
         backdropFilter: "blur(3px)",
         margin: "1rem",

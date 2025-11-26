@@ -24,12 +24,12 @@ function SkillsCard() {
           <FrameworksCard />
         </Magnet>
       </div>
-      <div style={{ position: "absolute", bottom: "48px", left: "50px" }}>
+      <div style={{ position: "absolute", bottom: "38px", left: "50px" }}>
         <Magnet padding={50} disabled={false} magnetStrength={50}>
           <ToolsCard />
         </Magnet>
       </div>
-      <div style={{ position: "absolute", bottom: "130px", right: "50px" }}>
+      <div style={{ position: "absolute", bottom: "103px", right: "50px" }}>
         <Magnet padding={50} disabled={false} magnetStrength={50}>
           <ConceptsCard />
         </Magnet>

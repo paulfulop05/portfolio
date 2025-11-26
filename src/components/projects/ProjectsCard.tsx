@@ -6,8 +6,7 @@ import obstrutionImage from "../../assets/projects/Obstruction.png";
 const projects = [
   {
     title: "Project 1",
-    description:
-      "A comprehensive full-stack application built with modern technologies. Features include user authentication, real-time updates, and responsive design.",
+    description: "Example 1 in one sentence bla ble blu.",
     imagePath: obstrutionImage,
     technologies: [
       {
@@ -30,8 +29,7 @@ const projects = [
   },
   {
     title: "Project 2",
-    description:
-      "An innovative solution for data visualization and analytics. Provides interactive charts and real-time data processing capabilities.",
+    description: "Example 2 in one sentence bla ble blu.",
     imagePath: obstrutionImage,
     technologies: [
       {
@@ -49,8 +47,53 @@ const projects = [
   },
   {
     title: "Project 3",
-    description:
-      "A powerful API service with comprehensive documentation. Built with scalability and performance in mind.",
+    description: "Example 3 in one sentence bla ble blu.",
+    imagePath: obstrutionImage,
+    technologies: [
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+        alt: "Node.js",
+        name: "Node.js",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
+        alt: "Express",
+        name: "Express",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
+        alt: "MongoDB",
+        name: "MongoDB",
+      },
+    ],
+    githubUrl: "https://github.com/paulfulop05",
+  },
+  {
+    title: "Project 4",
+    description: "Example 4 in one sentence bla ble blu.",
+    imagePath: obstrutionImage,
+    technologies: [
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+        alt: "Node.js",
+        name: "Node.js",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
+        alt: "Express",
+        name: "Express",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
+        alt: "MongoDB",
+        name: "MongoDB",
+      },
+    ],
+    githubUrl: "https://github.com/paulfulop05",
+  },
+  {
+    title: "Project 5",
+    description: "Example 5 in one sentence bla ble blu.",
     imagePath: obstrutionImage,
     technologies: [
       {
@@ -75,17 +118,25 @@ const projects = [
 
 export const ProjectsCard: React.FC = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl mx-auto px-4">
-      {projects.map((project, index) => (
-        <ProjectCard
-          key={index}
-          projectTitle={project.title}
-          projectDescription={project.description}
-          projectImagePath={project.imagePath}
-          technologiesUsed={project.technologies}
-          githubUrl={project.githubUrl}
-        />
-      ))}
+    <div className="w-full flex justify-center">
+      <div
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl px-4 justify-items-center"
+        style={{
+          columnGap: "200px",
+          rowGap: "20px",
+        }}
+      >
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={index}
+            projectTitle={project.title}
+            projectDescription={project.description}
+            projectImagePath={project.imagePath}
+            technologiesUsed={project.technologies}
+            githubUrl={project.githubUrl}
+          />
+        ))}
+      </div>
     </div>
   );
 };
