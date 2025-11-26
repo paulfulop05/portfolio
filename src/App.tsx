@@ -132,198 +132,202 @@ function App() {
             threshold={0.2}
             delay={0.3}
           >
-            <div
-              style={{
-                pointerEvents: "auto",
-                display: "flex",
-                gap: "2rem",
-                marginBlock: "15rem",
-                alignItems: "flex-start",
-              }}
-            >
+            {/* Hero Section */}
+            <div className="w-full flex justify-center px-8">
+              <div
+                style={{
+                  pointerEvents: "auto",
+                  display: "flex",
+                  gap: "2rem",
+                  marginBlock: "15rem",
+                  alignItems: "flex-start",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginRight: "8rem",
+                  }}
+                >
+                  {/* Avatar with Glare Effect */}
+                  <div
+                    style={{
+                      pointerEvents: "auto",
+                    }}
+                  >
+                    <GlareCard width="300px" height="250px">
+                      <img
+                        src={avatar}
+                        alt="Paul Fülöp"
+                        className="h-full w-full object-cover rounded-[1px]"
+                      />
+                    </GlareCard>
+                  </div>
+
+                  {/* Intro Text and Terminal */}
+                  <h1
+                    style={{
+                      fontSize: "3.5rem",
+                      fontWeight: "bold",
+                      margin: "2rem",
+                      fontFamily: "'Montserrat', sans-serif",
+                      color: "var(--color-text-secondary)",
+                      lineHeight: "1",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <TypingAnimation
+                      duration={42}
+                      delay={100}
+                      style={{ fontSize: "3.5rem" }}
+                    >
+                      Hi, I'm
+                    </TypingAnimation>
+                    <br />
+                    <span
+                      style={{
+                        display: "block",
+                        marginBottom: "-4.25rem",
+                      }}
+                    >
+                      <GradientText
+                        colors={primaryGradientColors}
+                        animationSpeed={6.5}
+                        showBorder={false}
+                      >
+                        <TypingAnimation
+                          duration={42}
+                          delay={500}
+                          style={{
+                            fontWeight: "bold",
+                            fontFamily: "'Montserrat', sans-serif",
+                            fontSize: "3.5rem",
+                          }}
+                        >
+                          Paul Fülöp
+                        </TypingAnimation>
+                      </GradientText>
+                    </span>
+                    <br />
+                    <span
+                      style={{
+                        display: "block",
+                        marginBottom: "-0.05rem",
+                      }}
+                    >
+                      <TypingAnimation
+                        duration={30}
+                        delay={2000}
+                        style={{ fontSize: "1.47rem" }}
+                      >
+                        Computer Science Student
+                      </TypingAnimation>
+                    </span>
+
+                    <span
+                      style={{
+                        fontSize: "1rem",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "0.5rem",
+                      }}
+                    >
+                      <TypingAnimation duration={42} delay={3000}>
+                        Cluj-Napoca, Romania
+                      </TypingAnimation>
+                      <img
+                        src={RomaniaFlag}
+                        alt="Romania Flag"
+                        style={{
+                          width: "1.2rem",
+                          height: "1.2rem",
+                          opacity: 0,
+                          animation: "fadeIn 0.8s ease-in-out 3.5s forwards",
+                        }}
+                      />
+                    </span>
+                  </h1>
+                </div>
+
+                {/* Terminal Component */}
+                <div
+                  style={{
+                    flexShrink: 0,
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: "500px",
+                    margin: "5rem 2rem",
+                    overflow: "hidden",
+                  }}
+                >
+                  <Terminal
+                    className="!w-full"
+                    onCommand={(cmd, addResponse, clearTerminal) => {
+                      const command = cmd.trim().toLowerCase();
+
+                      if (command === "about") {
+                        addResponse(
+                          "I'm a 20-year-old CS student at Babeș-Bolyai University." +
+                            " I'm focused on tech, problem-solving, and software development but" +
+                            " I also have a slight interest in game development and the mix of technical" +
+                            " and creative work behind it."
+                        );
+                      } else if (command === "help") {
+                        addResponse("Available commands: about, help, clear");
+                      } else if (command === "clear") {
+                        clearTerminal();
+                      } else if (command) {
+                        addResponse(
+                          `Command not found: ${command}. Type 'help' for available commands.`
+                        );
+                      }
+                    }}
+                    initialHistory={[
+                      {
+                        text: "Welcome to my portfolio terminal!",
+                        typing: false,
+                      },
+                      {
+                        text: "Start with 'about' to get to know me.",
+                        typing: false,
+                      },
+                      {
+                        text: "Other commands: help, clear",
+                        typing: false,
+                      },
+                    ]}
+                    prompt=">"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* skills section */}
+            <div className="w-full flex justify-center px-8">
               <div
                 style={{
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "center",
-                  marginRight: "8rem",
+                  gap: "2rem",
+                  marginBottom: "15rem",
                 }}
               >
-                {/* Avatar with Glare Effect */}
-                <div
-                  style={{
-                    pointerEvents: "auto",
-                  }}
-                >
-                  <GlareCard width="300px" height="250px">
-                    <img
-                      src={avatar}
-                      alt="Paul Fülöp"
-                      className="h-full w-full object-cover rounded-[1px]"
-                    />
-                  </GlareCard>
-                </div>
-
-                {/* Intro Text and Terminal */}
-                <h1
-                  style={{
-                    fontSize: "3.5rem",
-                    fontWeight: "bold",
-                    margin: "2rem",
-                    fontFamily: "'Montserrat', sans-serif",
-                    color: "var(--color-text-secondary)",
-                    lineHeight: "1",
-                    flexShrink: 0,
-                  }}
-                >
-                  <TypingAnimation
-                    duration={42}
-                    delay={100}
-                    style={{ fontSize: "3.5rem" }}
-                  >
-                    Hi, I'm
-                  </TypingAnimation>
-                  <br />
-                  <span
+                {/* 3D-ASCII */}
+                <GradientText colors={primaryGradientColors} animationSpeed={3}>
+                  <pre
                     style={{
-                      display: "block",
-                      marginBottom: "-4.25rem",
-                    }}
-                  >
-                    <GradientText
-                      colors={primaryGradientColors}
-                      animationSpeed={6.5}
-                      showBorder={false}
-                    >
-                      <TypingAnimation
-                        duration={42}
-                        delay={500}
-                        style={{
-                          fontWeight: "bold",
-                          fontFamily: "'Montserrat', sans-serif",
-                          fontSize: "3.5rem",
-                        }}
-                      >
-                        Paul Fülöp
-                      </TypingAnimation>
-                    </GradientText>
-                  </span>
-                  <br />
-                  <span
-                    style={{
-                      display: "block",
-                      marginBottom: "-0.05rem",
-                    }}
-                  >
-                    <TypingAnimation
-                      duration={30}
-                      delay={2000}
-                      style={{ fontSize: "1.47rem" }}
-                    >
-                      Computer Science Student
-                    </TypingAnimation>
-                  </span>
-
-                  <span
-                    style={{
+                      fontFamily: "monospace",
                       fontSize: "1rem",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "0.5rem",
+                      lineHeight: "1",
+                      fontWeight: "900",
                     }}
                   >
-                    <TypingAnimation duration={42} delay={3000}>
-                      Cluj-Napoca, Romania
-                    </TypingAnimation>
-                    <img
-                      src={RomaniaFlag}
-                      alt="Romania Flag"
-                      style={{
-                        width: "1.2rem",
-                        height: "1.2rem",
-                        opacity: 0,
-                        animation: "fadeIn 0.8s ease-in-out 3.5s forwards",
-                      }}
-                    />
-                  </span>
-                </h1>
-              </div>
-
-              {/* Terminal Component */}
-              <div
-                style={{
-                  flexShrink: 0,
-                  alignItems: "center",
-                  justifyContent: "center",
-                  width: "500px",
-                  margin: "5rem 2rem",
-                  overflow: "hidden",
-                }}
-              >
-                <Terminal
-                  className="!w-full"
-                  onCommand={(cmd, addResponse, clearTerminal) => {
-                    const command = cmd.trim().toLowerCase();
-
-                    if (command === "about") {
-                      addResponse(
-                        "I'm a 20-year-old CS student at Babeș-Bolyai University." +
-                          " I'm focused on tech, problem-solving, and software development but" +
-                          " I also have a slight interest in game development and the mix of technical" +
-                          " and creative work behind it."
-                      );
-                    } else if (command === "help") {
-                      addResponse("Available commands: about, help, clear");
-                    } else if (command === "clear") {
-                      clearTerminal();
-                    } else if (command) {
-                      addResponse(
-                        `Command not found: ${command}. Type 'help' for available commands.`
-                      );
-                    }
-                  }}
-                  initialHistory={[
-                    {
-                      text: "Welcome to my portfolio terminal!",
-                      typing: false,
-                    },
-                    {
-                      text: "Start with 'about' to get to know me.",
-                      typing: false,
-                    },
-                    {
-                      text: "Other commands: help, clear",
-                      typing: false,
-                    },
-                  ]}
-                  prompt=">"
-                />
-              </div>
-            </div>
-
-            {/* skills section */}
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "2rem",
-                marginBottom: "15rem",
-              }}
-            >
-              {/* 3D-ASCII */}
-              <GradientText colors={primaryGradientColors} animationSpeed={3}>
-                <pre
-                  style={{
-                    fontFamily: "monospace",
-                    fontSize: "1rem",
-                    lineHeight: "1",
-                    fontWeight: "900",
-                  }}
-                >
-                  {` ________  ___  __    ___  ___       ___       ________      
+                    {` ________  ___  __    ___  ___       ___       ________      
 |\\   ____\\|\\  \\|\\  \\ |\\  \\|\\  \\     |\\  \\     |\\   ____\\     
 \\ \\  \\___|\\ \\  \\/  /|\\ \\  \\ \\  \\    \\ \\  \\    \\ \\  \\___|_    
  \\ \\_____  \\ \\   ___  \\ \\  \\ \\  \\    \\ \\  \\    \\ \\_____  \\   
@@ -333,31 +337,35 @@ function App() {
     \\|_________|                                  \\|_________|
                                                              
   `}
-                </pre>
-              </GradientText>
-              <SkillsCard />
+                  </pre>
+                </GradientText>
+                <SkillsCard />
+              </div>
             </div>
 
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "column",
-                gap: "2rem",
-                marginBottom: "15rem",
-              }}
-            >
-              <GradientText colors={primaryGradientColors} animationSpeed={3}>
-                <pre
-                  style={{
-                    fontFamily: "monospace",
-                    fontSize: "1rem",
-                    lineHeight: "1",
-                    fontWeight: "900",
-                  }}
-                >
-                  {`________  ________  ________        ___  _______   ________ _________  ________
+            {/* projects section */}
+            <div className="w-full flex justify-center px-8">
+              {" "}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexDirection: "column",
+                  gap: "2rem",
+                  marginBottom: "15rem",
+                }}
+              >
+                <GradientText colors={primaryGradientColors} animationSpeed={3}>
+                  <pre
+                    style={{
+                      fontFamily: "monospace",
+                      fontSize: "1rem",
+                      lineHeight: "1",
+                      fontWeight: "900",
+                    }}
+                  >
+                    {`________  ________  ________        ___  _______   ________ _________  ________
 |\\   __  \\|\\   __  \\|\\   __  \\      |\\  \\|\\  ___ \\ |\\   ____|\\___   ___|\\   ____\\
 \\ \\  \\|\\  \\ \\  \\|\\  \\ \\  \\|\\  \\     \\ \\  \\ \\   __/|\\ \\  \\___\\|___ \\  \\_\\ \\  \\___|_
  \\ \\   ____\\ \\   _  _\\ \\  \\\\\\  \\  __ \\ \\  \\ \\  \\_|/_\\ \\  \\       \\ \\  \\ \\ \\_____  \\
@@ -365,36 +373,13 @@ function App() {
    \\ \\__\\    \\ \\__\\\\ _\\\\ \\_______\\ \\________\\ \\_______\\ \\_______\\  \\ \\__\\  ____\\_\\  \\
     \\|__|     \\|__|\\|__|\\|_______|\\|________|\\|_______|\\|_______|   \\|__| |\\_________\\
                                                                           \\|_________|`}
-                </pre>
-              </GradientText>
+                  </pre>
+                </GradientText>
 
-              {/*  Here will be the projects card */}
-              <ProjectsCard />
+                {/*  Here will be the projects card */}
+                <ProjectsCard />
+              </div>
             </div>
-
-            {/* C++ Code Card */}
-            {/* <CodeCard
-              code={`#include <iostream>
-
-using namespace std;
-
-int main() {
-    cout << "Performance-focused development\\n";
-    cout << "Strong fundamentals in DSA\\n";
-    cout << "Complex problem solving\\n";
-    cout << "Pragmatic and clean code\\n";
-    
-    return 0;
-}`}
-              language="cpp"
-              showLineNumbers={false}
-              showHeader={false}
-              showCopyButton={false}
-              theme="oneDark"
-              maxHeight="400px"
-            /> */}
-
-            {/* Card Swap Component */}
           </AnimatedContent>
         </div>
       </div>

@@ -12,7 +12,7 @@ function LanguagesCard() {
       className={`relative rounded-lg`}
       style={{
         width: "500px",
-        height: "370px",
+        height: "390px",
         backgroundColor: "rgba(52, 58, 64, 0.7)", // var(--color-surface-secondary) with 70% opacity
         border: "2px solid var(--color-surface-borders)",
         pointerEvents: "auto",
@@ -64,8 +64,9 @@ function LanguagesCard() {
             display: "block",
             marginTop: "0.7rem",
             marginBottom: "-0.7rem",
-            fontSize: "0.9rem",
-            fontWeight: "450",
+            fontSize: "0.875rem",
+            fontWeight: "400",
+            lineHeight: "1.5",
           }}
         >
           I have used these programming languages in various projects throughout
@@ -147,8 +148,9 @@ function LanguagesCard() {
             display: "block",
             marginTop: "0.7rem",
             marginBottom: "-0.7rem",
-            fontSize: "0.9rem",
-            fontWeight: "450",
+            fontSize: "0.875rem",
+            fontWeight: "400",
+            lineHeight: "1.5",
           }}
         >
           I have worked with these programming languages at least once in my

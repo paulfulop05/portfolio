@@ -24,7 +24,7 @@ function SkillsCard() {
           <FrameworksCard />
         </Magnet>
       </div>
-      <div style={{ position: "absolute", bottom: "64px", left: "50px" }}>
+      <div style={{ position: "absolute", bottom: "48px", left: "50px" }}>
         <Magnet padding={50} disabled={false} magnetStrength={50}>
           <ToolsCard />
         </Magnet>

@@ -1,75 +1,91 @@
-import { BentoGrid, BentoGridItem } from "../bento-grid";
-import {
-  IconArrowWaveRightUp,
-  IconBoxAlignRightFilled,
-  IconBoxAlignTopLeft,
-  IconClipboardCopy,
-  IconFileBroken,
-  IconSignature,
-  IconTableColumn,
-} from "@tabler/icons-react";
+import ProjectCard from "./ProjectCard";
+import React from "react";
 
-export function ProjectsCard() {
-  return (
-    <BentoGrid className="max-w-4xl mx-auto">
-      {items.map((item, i) => (
-        <BentoGridItem
-          key={i}
-          title={item.title}
-          description={item.description}
-          header={item.header}
-          icon={item.icon}
-          className={i === 3 || i === 6 ? "md:col-span-2" : ""}
-        />
-      ))}
-    </BentoGrid>
-  );
-}
-const Skeleton = () => (
-  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"></div>
-);
-const items = [
+import obstrutionImage from "../../assets/projects/Obstruction.png";
+
+const projects = [
   {
-    title: "The Dawn of Innovation",
-    description: "Explore the birth of groundbreaking ideas and inventions.",
-    header: <Skeleton />,
-    icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "The Digital Revolution",
-    description: "Dive into the transformative power of technology.",
-    header: <Skeleton />,
-    icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "The Art of Design",
-    description: "Discover the beauty of thoughtful and functional design.",
-    header: <Skeleton />,
-    icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "The Power of Communication",
+    title: "Project 1",
     description:
-      "Understand the impact of effective communication in our lives.",
-    header: <Skeleton />,
-    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+      "A comprehensive full-stack application built with modern technologies. Features include user authentication, real-time updates, and responsive design.",
+    imagePath: obstrutionImage,
+    technologies: [
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+        alt: "React",
+        name: "React",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+        alt: "TypeScript",
+        name: "TypeScript",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+        alt: "Node.js",
+        name: "Node.js",
+      },
+    ],
+    githubUrl: "https://github.com/paulfulop05",
   },
   {
-    title: "The Pursuit of Knowledge",
-    description: "Join the quest for understanding and enlightenment.",
-    header: <Skeleton />,
-    icon: <IconArrowWaveRightUp className="h-4 w-4 text-neutral-500" />,
+    title: "Project 2",
+    description:
+      "An innovative solution for data visualization and analytics. Provides interactive charts and real-time data processing capabilities.",
+    imagePath: obstrutionImage,
+    technologies: [
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+        alt: "Python",
+        name: "Python",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+        alt: "JavaScript",
+        name: "JavaScript",
+      },
+    ],
+    githubUrl: "https://github.com/paulfulop05",
   },
   {
-    title: "The Joy of Creation",
-    description: "Experience the thrill of bringing ideas to life.",
-    header: <Skeleton />,
-    icon: <IconBoxAlignTopLeft className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "The Spirit of Adventure",
-    description: "Embark on exciting journeys and thrilling discoveries.",
-    header: <Skeleton />,
-    icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500" />,
+    title: "Project 3",
+    description:
+      "A powerful API service with comprehensive documentation. Built with scalability and performance in mind.",
+    imagePath: obstrutionImage,
+    technologies: [
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+        alt: "Node.js",
+        name: "Node.js",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
+        alt: "Express",
+        name: "Express",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
+        alt: "MongoDB",
+        name: "MongoDB",
+      },
+    ],
+    githubUrl: "https://github.com/paulfulop05",
   },
 ];
+
+export const ProjectsCard: React.FC = () => {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl mx-auto px-4">
+      {projects.map((project, index) => (
+        <ProjectCard
+          key={index}
+          projectTitle={project.title}
+          projectDescription={project.description}
+          projectImagePath={project.imagePath}
+          technologiesUsed={project.technologies}
+          githubUrl={project.githubUrl}
+        />
+      ))}
+    </div>
+  );
+};
