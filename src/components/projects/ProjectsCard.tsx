@@ -2,12 +2,14 @@ import ProjectCard from "./ProjectCard";
 import React from "react";
 
 import obstrutionImage from "../../assets/projects/Obstruction.png";
+import obstrutionGif from "../../assets/projects/test.gif";
 
 const projects = [
   {
     title: "Project 1",
     description: "Example 1 in one sentence bla ble blu.",
     imagePath: obstrutionImage,
+    gifPath: obstrutionGif,
     technologies: [
       {
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
@@ -31,6 +33,7 @@ const projects = [
     title: "Project 2",
     description: "Example 2 in one sentence bla ble blu.",
     imagePath: obstrutionImage,
+    gifPath: obstrutionGif,
     technologies: [
       {
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
@@ -49,6 +52,7 @@ const projects = [
     title: "Project 3",
     description: "Example 3 in one sentence bla ble blu.",
     imagePath: obstrutionImage,
+    gifPath: obstrutionGif,
     technologies: [
       {
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
@@ -72,6 +76,7 @@ const projects = [
     title: "Project 4",
     description: "Example 4 in one sentence bla ble blu.",
     imagePath: obstrutionImage,
+    gifPath: obstrutionGif,
     technologies: [
       {
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
@@ -95,6 +100,7 @@ const projects = [
     title: "Project 5",
     description: "Example 5 in one sentence bla ble blu.",
     imagePath: obstrutionImage,
+    gifPath: obstrutionGif,
     technologies: [
       {
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
@@ -122,8 +128,8 @@ export const ProjectsCard: React.FC = () => {
       <div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl px-4 justify-items-center"
         style={{
-          columnGap: "200px",
-          rowGap: "20px",
+          columnGap: "230px",
+          rowGap: "65px",
         }}
       >
         {projects.map((project, index) => (
@@ -132,6 +138,7 @@ export const ProjectsCard: React.FC = () => {
             projectTitle={project.title}
             projectDescription={project.description}
             projectImagePath={project.imagePath}
+            projectGifPath={project.gifPath}
             technologiesUsed={project.technologies}
             githubUrl={project.githubUrl}
           />
