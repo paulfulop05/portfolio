@@ -73,7 +73,6 @@ function ProjectCard({
           margin: "0.75rem 1.6rem",
           background: "transparent",
           borderRadius: "1.2rem",
-          cursor: "pointer",
           border: isImageHovered
             ? "2px solid var(--color-surface-secondary)"
             : "2px solid transparent",

@@ -151,7 +151,6 @@ function LanguagesCard() {
                 flexShrink: 0,
                 transition: "transform 0.2s ease",
                 opacity: 0.8,
-                cursor: "pointer",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "scale(1.04)";
@@ -214,7 +213,6 @@ function LanguagesCard() {
                 flexShrink: 0,
                 transition: "transform 0.2s ease",
                 opacity: 0.8,
-                cursor: "pointer",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "scale(1.04)";
