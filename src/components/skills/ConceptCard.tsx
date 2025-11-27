@@ -15,6 +15,16 @@ function ConceptCard({ text }: ConceptCardProps) {
         fontFamily: "'Montserrat', sans-serif",
         border: "1px solid var(--color-surface-borders)",
         display: "inline-block",
+        transition: "transform 0.2s ease",
+        opacity: 0.8,
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = "scale(1.04)";
+        e.currentTarget.style.opacity = "1";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = "scale(1)";
+        e.currentTarget.style.opacity = "0.8";
       }}
     >
       {text}

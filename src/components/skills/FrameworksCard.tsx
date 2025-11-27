@@ -1,9 +1,38 @@
 import GradientText from "../GradientText";
 
+interface TechIcon {
+  src: string;
+  alt: string;
+  name?: string;
+}
+
 const secondaryGradientColors = getComputedStyle(document.documentElement)
   .getPropertyValue("--color-gradient-secondary")
   .split(",")
   .map((c) => c.trim());
+
+const frameworks: TechIcon[] = [
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/qt/qt-original.svg",
+    alt: "Qt",
+    name: "Qt",
+  },
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    alt: "React",
+    name: "React",
+  },
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+    alt: "Tailwind CSS",
+    name: "Tailwind CSS",
+  },
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-plain-wordmark.svg",
+    alt: ".NET",
+    name: ".NET",
+  },
+];
 
 function FrameworksCard() {
   return (
@@ -66,43 +95,31 @@ function FrameworksCard() {
             marginTop: "1rem",
           }}
         >
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/qt/qt-original.svg"
-            style={{
-              width: "20px",
-              height: "20px",
-              display: "block",
-              flexShrink: 0,
-            }}
-          />
-
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
-            style={{
-              width: "23px",
-              height: "23px",
-              display: "block",
-              flexShrink: 0,
-            }}
-          />
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
-            style={{
-              width: "23px",
-              height: "23px",
-              display: "block",
-              flexShrink: 0,
-            }}
-          />
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-plain-wordmark.svg"
-            style={{
-              width: "23px",
-              height: "23px",
-              display: "block",
-              flexShrink: 0,
-            }}
-          />
+          {frameworks.map((tech, index) => (
+            <img
+              key={index}
+              src={tech.src}
+              alt={tech.alt}
+              title={tech.name}
+              style={{
+                width: "20px",
+                height: "20px",
+                display: "block",
+                flexShrink: 0,
+                transition: "transform 0.2s ease",
+                opacity: 0.8,
+                cursor: "pointer",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.04)";
+                e.currentTarget.style.opacity = "1";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+                e.currentTarget.style.opacity = "0.8";
+              }}
+            />
+          ))}
         </div>
       </p>
     </div>

@@ -1,10 +1,21 @@
 import GradientText from "../GradientText";
 import ConceptCard from "./ConceptCard";
 
+interface Concept {
+  text: string;
+}
+
 const secondaryGradientColors = getComputedStyle(document.documentElement)
   .getPropertyValue("--color-gradient-secondary")
   .split(",")
   .map((c) => c.trim());
+
+const concepts: Concept[] = [
+  { text: "Object-Oriented Programming" },
+  { text: "Data Structures" },
+  { text: "Algorithms" },
+  { text: "Software Engineering Principles" },
+];
 
 function ConceptsCard() {
   return (
@@ -68,10 +79,9 @@ function ConceptsCard() {
             marginTop: "1rem",
           }}
         >
-          <ConceptCard text={"Object-Oriented Programming"} />
-          <ConceptCard text={"Data Structures"} />
-          <ConceptCard text={"Algorithms"} />
-          <ConceptCard text={"Software Engineering Principles"} />
+          {concepts.map((concept, index) => (
+            <ConceptCard key={index} text={concept.text} />
+          ))}
         </div>
       </p>
     </div>

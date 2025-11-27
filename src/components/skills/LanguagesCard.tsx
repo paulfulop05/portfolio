@@ -1,10 +1,67 @@
 import asm_logo from "../../assets/assemblyscript_logo.svg";
 import GradientText from "../GradientText";
 
+interface TechIcon {
+  src: string;
+  alt: string;
+  name?: string;
+}
+
 const secondaryGradientColors = getComputedStyle(document.documentElement)
   .getPropertyValue("--color-gradient-secondary")
   .split(",")
   .map((c) => c.trim());
+
+const proficientLanguages: TechIcon[] = [
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg",
+    alt: "C",
+    name: "C",
+  },
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg",
+    alt: "C++",
+    name: "C++",
+  },
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg",
+    alt: "C#",
+    name: "C#",
+  },
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+    alt: "Python",
+    name: "Python",
+  },
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+    alt: "Java",
+    name: "Java",
+  },
+];
+
+const familiarLanguages: TechIcon[] = [
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg",
+    alt: "Lua",
+    name: "Lua",
+  },
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+    alt: "JavaScript",
+    name: "JavaScript",
+  },
+  {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+    alt: "TypeScript",
+    name: "TypeScript",
+  },
+  {
+    src: asm_logo,
+    alt: "AssemblyScript",
+    name: "AssemblyScript",
+  },
+];
 
 function LanguagesCard() {
   return (
@@ -81,52 +138,31 @@ function LanguagesCard() {
             marginTop: "0.5rem",
           }}
         >
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"
-            style={{
-              width: "20px",
-              height: "20px",
-              display: "block",
-              flexShrink: 0,
-            }}
-          />
-
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
-            style={{
-              width: "23px",
-              height: "23px",
-              display: "block",
-              flexShrink: 0,
-            }}
-          />
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
-            style={{
-              width: "23px",
-              height: "23px",
-              display: "block",
-              flexShrink: 0,
-            }}
-          />
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
-            style={{
-              width: "23px",
-              height: "23px",
-              display: "block",
-              flexShrink: 0,
-            }}
-          />
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
-            style={{
-              width: "23px",
-              height: "23px",
-              display: "block",
-              flexShrink: 0,
-            }}
-          />
+          {proficientLanguages.map((tech, index) => (
+            <img
+              key={index}
+              src={tech.src}
+              alt={tech.alt}
+              title={tech.name}
+              style={{
+                width: "20px",
+                height: "20px",
+                display: "block",
+                flexShrink: 0,
+                transition: "transform 0.2s ease",
+                opacity: 0.8,
+                cursor: "pointer",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.04)";
+                e.currentTarget.style.opacity = "1";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+                e.currentTarget.style.opacity = "0.8";
+              }}
+            />
+          ))}
         </div>
       </p>
 
@@ -165,63 +201,31 @@ function LanguagesCard() {
             marginTop: "0.5rem",
           }}
         >
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg"
-            style={{
-              width: "22px",
-              height: "22px",
-              display: "block",
-              flexShrink: 0,
-            }}
-          />
-          <i className="devicon-bash-plain" style={{ fontSize: "22px" }}></i>
-          <img
-            src={asm_logo}
-            style={{
-              width: "22px",
-              height: "22px",
-              display: "block",
-              flexShrink: 0,
-            }}
-          />
-
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-            style={{
-              width: "22px",
-              height: "22px",
-              display: "block",
-              flexShrink: 0,
-            }}
-          />
-
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
-            style={{
-              width: "22px",
-              height: "22px",
-              display: "block",
-              flexShrink: 0,
-            }}
-          />
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-            style={{
-              width: "22px",
-              height: "22px",
-              display: "block",
-              flexShrink: 0,
-            }}
-          />
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-            style={{
-              width: "22px",
-              height: "22px",
-              display: "block",
-              flexShrink: 0,
-            }}
-          />
+          {familiarLanguages.map((tech, index) => (
+            <img
+              key={index}
+              src={tech.src}
+              alt={tech.alt}
+              title={tech.name}
+              style={{
+                width: "20px",
+                height: "20px",
+                display: "block",
+                flexShrink: 0,
+                transition: "transform 0.2s ease",
+                opacity: 0.8,
+                cursor: "pointer",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.04)";
+                e.currentTarget.style.opacity = "1";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+                e.currentTarget.style.opacity = "0.8";
+              }}
+            />
+          ))}
         </div>
       </p>
     </div>
