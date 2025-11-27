@@ -169,7 +169,7 @@ function ProjectCard({
                     }}
                   />
                 </TooltipTrigger>
-                <TooltipContent side="top">{tech.name}</TooltipContent>
+                <TooltipContent>{tech.name}</TooltipContent>
               </Tooltip>
             ))}
           </div>

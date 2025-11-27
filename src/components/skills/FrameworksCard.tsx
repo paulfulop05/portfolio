@@ -1,4 +1,5 @@
 import GradientText from "../GradientText";
+import { Tooltip, TooltipTrigger, TooltipContent } from "../Tooltip";
 
 interface TechIcon {
   src: string;
@@ -96,28 +97,33 @@ function FrameworksCard() {
           }}
         >
           {frameworks.map((tech, index) => (
-            <img
-              key={index}
-              src={tech.src}
-              alt={tech.alt}
-              title={tech.name}
-              style={{
-                width: "20px",
-                height: "20px",
-                display: "block",
-                flexShrink: 0,
-                transition: "transform 0.2s ease",
-                opacity: 0.8,
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "scale(1.04)";
-                e.currentTarget.style.opacity = "1";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "scale(1)";
-                e.currentTarget.style.opacity = "0.8";
-              }}
-            />
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <img
+                  key={index}
+                  src={tech.src}
+                  alt={tech.alt}
+                  title={tech.name}
+                  style={{
+                    width: "20px",
+                    height: "20px",
+                    display: "block",
+                    flexShrink: 0,
+                    transition: "transform 0.2s ease",
+                    opacity: 0.8,
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "scale(1.04)";
+                    e.currentTarget.style.opacity = "1";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "scale(1)";
+                    e.currentTarget.style.opacity = "0.8";
+                  }}
+                />
+              </TooltipTrigger>
+              <TooltipContent>{tech.name}</TooltipContent>
+            </Tooltip>
           ))}
         </div>
       </p>
