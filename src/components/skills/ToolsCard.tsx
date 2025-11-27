@@ -32,21 +32,6 @@ const tools: TechIcon[] = [
     alt: "Vite",
     name: "Vite",
   },
-  {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-original.svg",
-    alt: "Visual Studio",
-    name: "Visual Studio",
-  },
-  {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg",
-    alt: "VS Code",
-    name: "VS Code",
-  },
-  {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intellij/intellij-original.svg",
-    alt: "IntelliJ",
-    name: "IntelliJ",
-  },
 ];
 
 function ToolsCard() {

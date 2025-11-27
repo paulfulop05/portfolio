@@ -1,5 +1,6 @@
 import ProjectCard from "./ProjectCard";
 import React from "react";
+import Magnet from "../Magnet";
 
 import obstrutionImage from "../../assets/projects/Obstruction.png";
 import obstrutionGif from "../../assets/projects/test.gif";
@@ -133,15 +134,17 @@ export const ProjectsCard: React.FC = () => {
         }}
       >
         {projects.map((project, index) => (
-          <ProjectCard
-            key={index}
-            projectTitle={project.title}
-            projectDescription={project.description}
-            projectImagePath={project.imagePath}
-            projectGifPath={project.gifPath}
-            technologiesUsed={project.technologies}
-            githubUrl={project.githubUrl}
-          />
+          <Magnet padding={50} disabled={false} magnetStrength={50}>
+            <ProjectCard
+              key={index}
+              projectTitle={project.title}
+              projectDescription={project.description}
+              projectImagePath={project.imagePath}
+              projectGifPath={project.gifPath}
+              technologiesUsed={project.technologies}
+              githubUrl={project.githubUrl}
+            />
+          </Magnet>
         ))}
       </div>
     </div>
