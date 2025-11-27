@@ -1,5 +1,6 @@
 import { useState } from "react";
 import GradientText from "../GradientText";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../Tooltip";
 
 const secondaryGradientColors = getComputedStyle(document.documentElement)
   .getPropertyValue("--color-gradient-secondary")
@@ -145,26 +146,31 @@ function ProjectCard({
             }}
           >
             {technologiesUsed.map((tech, index) => (
-              <img
-                key={index}
-                src={tech.src}
-                alt={tech.alt}
-                title={tech.name}
-                style={{
-                  width: "20px",
-                  height: "20px",
-                  transition: "transform 0.2s ease",
-                  opacity: 0.8,
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "scale(1.15)";
-                  e.currentTarget.style.opacity = "1";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "scale(1)";
-                  e.currentTarget.style.opacity = "0.8";
-                }}
-              />
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <img
+                    key={index}
+                    src={tech.src}
+                    alt={tech.alt}
+                    title={tech.name}
+                    style={{
+                      width: "20px",
+                      height: "20px",
+                      transition: "transform 0.2s ease",
+                      opacity: 0.8,
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "scale(1.15)";
+                      e.currentTarget.style.opacity = "1";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "scale(1)";
+                      e.currentTarget.style.opacity = "0.8";
+                    }}
+                  />
+                </TooltipTrigger>
+                <TooltipContent side="top">{tech.name}</TooltipContent>
+              </Tooltip>
             ))}
           </div>
         )}
