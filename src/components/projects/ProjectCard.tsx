@@ -50,28 +50,13 @@ function ProjectCard({
         transition: "border-color 0.2s ease",
       }}
     >
-      {/* Title */}
-      <div
-        style={{
-          fontSize: "1.25rem",
-          fontWeight: "700",
-          padding: "1.25rem 1.5rem 0.75rem 1.5rem",
-          fontFamily: "'Montserrat', sans-serif",
-          lineHeight: "1.2",
-        }}
-      >
-        <GradientText colors={secondaryGradientColors}>
-          {projectTitle}
-        </GradientText>
-      </div>
-
       {/* Image Section */}
       <div
         style={{
           position: "relative",
           height: "260px",
           overflow: "hidden",
-          margin: "0.75rem 1.6rem",
+          margin: "0.75rem",
           background: "transparent",
           borderRadius: "1.2rem",
           border: isImageHovered
@@ -90,7 +75,7 @@ function ProjectCard({
             height: "100%",
             objectFit: "cover",
             objectPosition: "center",
-            borderRadius: "8px",
+            borderRadius: "5px",
             transition: "all 0.3s ease",
             opacity: isImageHovered ? 0.9 : 1,
             transform: isImageHovered ? "scale(1.04)" : "scale(1)",
@@ -108,6 +93,20 @@ function ProjectCard({
           gap: "0",
         }}
       >
+        {/* Title */}
+        <div
+          style={{
+            fontSize: "1.25rem",
+            fontWeight: "700",
+            paddingBottom: "0.35rem",
+            fontFamily: "'Montserrat', sans-serif",
+            lineHeight: "1.2",
+          }}
+        >
+          <GradientText colors={secondaryGradientColors}>
+            {projectTitle}
+          </GradientText>
+        </div>
         {/* Description */}
         <p
           style={{

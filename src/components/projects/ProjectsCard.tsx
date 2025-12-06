@@ -130,7 +130,7 @@ export const ProjectsCard: React.FC = () => {
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl px-4 justify-items-center"
         style={{
           columnGap: "230px",
-          rowGap: "65px",
+          rowGap: "25px",
         }}
       >
         {projects.map((project, index) => (
